@@ -8,9 +8,9 @@ const {
     deletePurchase
 } = require('./controllers');
 
-router.get('/', getPurchases);
-router.post('/createPurchase', createPurchase);
-router.patch('/updatePurchase', updatePurchaseInfo);
-router.delete('/deletePurchase', deletePurchase);
+router.get('/purchases/', getPurchases);
+router.post('/purchases/', createPurchase);
+router.patch('/purchases/', updatePurchaseInfo);
+router.delete('/purchases/', deletePurchase);
 
 module.exports = router;
