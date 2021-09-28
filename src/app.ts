@@ -5,7 +5,13 @@ const mongoose = require('mongoose');
 const app = express();
 const apiRoutes = require('./modules/routes');
 
-app.use(cors());
+const corsOptions ={
+    origin:'*',
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions));
 
 const url = 'mongodb+srv://user:user@cluster0.ibhda.mongodb.net/Purchases';
 mongoose.connect(url,  { useNewUrlParser: true, useUnifiedTopology: true }).then();
